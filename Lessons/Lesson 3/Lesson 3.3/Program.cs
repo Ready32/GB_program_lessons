@@ -6,8 +6,8 @@
 
 System.Console.Write("Введите число до которого будет выполняться возведение в куб = ");
 int n = int.Parse(Console.ReadLine());
-
+System.Console.WriteLine("{0}\t{1}", "число", "куб");
 for (int i = 1; i <= n; i++)
 {
-    System.Console.WriteLine(i + " в третье степени = " + Math.Pow(i, 3));
+    Console.WriteLine("{0}\t{1}", i, Math.Pow(i, 3));
 }
