@@ -9,5 +9,5 @@ int n = int.Parse(Console.ReadLine());
 
 for (int i = 1; i <= n; i++)
 {
-    System.Console.WriteLine(Math.Pow(i, 3));
+    System.Console.WriteLine(i + " в третье степени = " + Math.Pow(i, 3));
 }
