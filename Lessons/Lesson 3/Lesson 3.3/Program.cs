@@ -5,7 +5,7 @@
 
 
 System.Console.Write("Введите число до которого будет выполняться возведение в куб = ");
-int n = int.Parse(Console.ReadLine());
+int n = int.Parse(Console.ReadLine()!);
 System.Console.WriteLine("{0}\t{1}", "число", "куб");
 for (int i = 1; i <= n; i++)
 {
