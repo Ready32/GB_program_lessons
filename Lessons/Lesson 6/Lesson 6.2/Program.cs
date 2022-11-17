@@ -12,7 +12,7 @@ k2 = Convert.ToDouble(Console.ReadLine());
 System.Console.Write("Введите переменные b2 для уравнения y=k2x+b2 - ");
 b2 = Convert.ToDouble(Console.ReadLine());
 
-if (k1 - k2 != 0)
+if (k1 != k2)
 {
     double x = (b1 - b2) / -(k1 - k2);
     if (k1 * x + b1 == k2 * x + b2)
@@ -24,9 +24,13 @@ if (k1 - k2 != 0)
         System.Console.WriteLine("Прямые не пересекаются...");
     }
 }
+else if (b1 == b2)
+{
+    System.Console.WriteLine("Прямые полностью совпадают друг с другом и имеют бесконечное количество точек пересечения");
+}
 else
 {
-    System.Console.WriteLine("Error");
+    System.Console.WriteLine("Прямые параллельны и не имеют точек пересечения");
 }
 
 
