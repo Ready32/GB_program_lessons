@@ -6,35 +6,38 @@
 3. Если нет, то MEX = (минимальное число + 1)
 Иначе перезаписываем минимальное число и повторяем алгоритм */
 
-/* 0   8
-3   6
-2   1
-4   4
-2   4
-3   2
-0   3 */
 
+int[] array = new int[5] { 0, 0, 0, 1, 5 };
+int mex = 0;
 
-int[] array = new int[4] { 5, 2, 3, 1 };
-int mex = array[0];
-int result;
+Array.Sort(array);
 
-for (int i = 1; i < array.Length; i++)
+if (array[0] == 0)
 {
-    if (array[i] < mex)
+    for (int i = 0; i < array.Length; i++)
     {
-        mex = array[i];
-
+        if (array[i] == mex + 1)
+        {
+            mex = array[i];
+        }
     }
-}
-
-for (int i = 0; i < array.Length; i++)
-{
-    if (array[i] == mex + 1)
-    {
-        mex = mex + 1;
-    }
-
+    mex = mex + 1;
 
 }
-System.Console.WriteLine("MEX = " + (mex + 1));
+else if (array[0] < 0)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] == mex - 1)
+        {
+            mex = array[i];
+        }
+    }
+
+}
+else
+{
+    mex = array[0] - 1;
+}
+
+System.Console.WriteLine("MEX = " + (mex));
