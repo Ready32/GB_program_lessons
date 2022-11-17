@@ -28,9 +28,17 @@ else if (array[0] < 0)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] == mex - 1)
+        if (array[i] == 0)
         {
             mex = array[i];
+            for (int n = 0; n < array.Length; n++)
+            {
+                if (array[n] == mex + 1)
+                {
+                    mex = array[n];
+                }
+            }
+            mex = mex + 1;
         }
     }
 
