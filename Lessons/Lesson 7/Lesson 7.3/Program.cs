@@ -6,7 +6,6 @@
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3. */
 
-Random random = new Random();
 int[,] array = new int[3, 4] { { 1, 4, 7, 2 }, { 5, 9, 2, 3 }, { 8, 4, 2, 4 } };
 PrintArray(array);
 Console.WriteLine("---------------------------");
