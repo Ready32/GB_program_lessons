@@ -34,7 +34,6 @@ if (column > 4)
 System.Console.WriteLine("Ваш элемент = " + array[row - 1, column - 1]);
 
 
-
 void PrintArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
