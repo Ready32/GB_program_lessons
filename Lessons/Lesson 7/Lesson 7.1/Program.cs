@@ -9,6 +9,8 @@ m = 3, n = 4.
 8 7,8 -7,1 9
  */
 
+
+
 double[,] array = GetArrayRandom(3, 4);
 PrintArray(array);
 
