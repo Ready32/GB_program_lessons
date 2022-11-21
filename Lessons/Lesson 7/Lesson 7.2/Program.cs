@@ -22,7 +22,6 @@ System.Console.Write("Введите строку элемента массив�
 int row = int.Parse(Console.ReadLine());
 while (row > a)
 {
-    System.Console.WriteLine($"{"Такой колонки нет..." + "Попробуйте ещё раз - "}");
     System.Console.WriteLine("Такой строки нет...");
     System.Console.Write("Попробуйте ещё раз - ");
     row = int.Parse(Console.ReadLine());
