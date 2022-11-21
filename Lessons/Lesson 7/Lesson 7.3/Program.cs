@@ -17,7 +17,7 @@ for (int j = 0; j < array.GetLength(1); j++)
     {
         sum += array[i, j];
     }
-    Console.Write($"{Math.Round(sum / array.GetLength(0), 2)} ");
+    Console.Write($"{(sum / array.GetLength(0)):f1} ");
 }
 
 
