@@ -8,40 +8,50 @@
 9 5 3 2
 8 4 4 2 */
 
-int[,] array = new int[3, 4] { { 1, 4, 7, 2 }, { 5, 9, 2, 3 }, { 8, 4, 2, 4 } };
+
+Console.Write("Введите количество строк массива = ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов массива = ");
+int b = Convert.ToInt32(Console.ReadLine());
+int[,] array = new int[a, b];
+array = GetArrayRandom(a, b);
+Console.WriteLine("Рандомный массив = ");
 PrintArray(array);
-int[] row1 = new int[4];
-int[] row2 = new int[4];
-int[] row3 = new int[4];
-for (int i = 0; i < array.GetLength(1); i++)
+
+int temp = 0;
+
+for (int i = 0; i < array.GetLength(0); i++)
 {
-    row1[i] = array[0, i];
-    row2[i] = array[1, i];
-    row3[i] = array[2, i];
-
-}
-Array.Sort(row1);
-Array.Reverse(row1);
-Array.Sort(row2);
-Array.Reverse(row2);
-Array.Sort(row3);
-Array.Reverse(row3);
-
-Console.WriteLine("---------------------------");
-Console.WriteLine("Сортировка по строкам: ");
-PrintArray(ArraySort(row1, row2, row3));
-
-int[,] ArraySort(int[] row1, int[] row2, int[] row3)
-{
-    int[,] arraySort = new int[3, 4];
-
-    for (int i = 0; i < row1.Length; i++)
+    for (int j = 0; j < array.GetLength(1) - 1; j++)
     {
-        arraySort[0, i] = row1[i];
-        arraySort[1, i] = row2[i];
-        arraySort[2, i] = row3[i];
+        for (int k = 0; k < array.GetLength(1) - 1; k++)
+            if (array[i, k] < array[i, k + 1])
+            {
+
+                temp = array[i, k];
+                array[i, k] = array[i, k + 1];
+                array[i, k + 1] = temp;
+            }
     }
-    return arraySort;
+}
+System.Console.WriteLine("Сортированный массив = ");
+PrintArray(array);
+
+
+int[,] GetArrayRandom(int a, int b, int minValue = 0, int maxValue = 20)
+{
+    int[,] array = new int[a, b];
+    int count = a * b;
+
+    Random rnd = new Random();
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = rnd.Next(minValue, maxValue);
+        }
+    }
+    return array;
 }
 
 void PrintArray(int[,] array)
