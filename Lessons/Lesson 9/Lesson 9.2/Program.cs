@@ -22,22 +22,22 @@ else
     max = n;
 }
 
-void Rec(int min, int max)
+int[] array = new int[max];
+
+void Rec(int min, int max, int sum = 0)
 {
-    int sum = 0;
 
-
-    while (max >= min)
+    if (min > max)
     {
-        sum += max;
-        max--;
+        System.Console.Write($"{sum} ");
+        return;
     }
-
-    System.Console.Write($"{sum}");
-
-    return;
+    else
+    {
+        sum = sum + max;
+        Rec(min, max - 1, sum);
+    }
 }
-
 
 Rec(min, max);
 System.Console.Write($" - Сумма элементов от {min} до {max}");
